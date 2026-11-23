@@ -3,6 +3,7 @@ package LibraryAPI;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Author {
@@ -10,6 +11,8 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long authorId;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
+    private List<Book> books;
 
     @Column(name = "name")
     private String name;

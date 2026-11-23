@@ -2,12 +2,16 @@ package LibraryAPI;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Publisher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long publisherId;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "publisher")
+    private List<Book> books;
 
     @Column(name = "name")
     private String name;
