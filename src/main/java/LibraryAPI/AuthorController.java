@@ -17,6 +17,11 @@ public class AuthorController {
         return authorRepository.findAll();
     }
 
+    @GetMapping("/{id}")
+    public Author getAuthorById(@PathVariable Long id) {
+        return authorRepository.findById(id).orElse(null);
+    }
+
     @PostMapping
     public Author createAuthor(@RequestBody Author author) {
         return authorRepository.save(author);
