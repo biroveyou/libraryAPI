@@ -28,7 +28,7 @@ public class PublisherController {
         return publisherRepository.findById(id).orElse(null);
     }
 
-    @PutMapping
+    @PutMapping("{id}")
     public Publisher updatePublisher(@PathVariable Long id, @RequestBody Publisher newPublisher) {
         Optional<Publisher> optionalPublisher = publisherRepository.findById(id);
         if (optionalPublisher.isPresent()) {
@@ -42,7 +42,7 @@ public class PublisherController {
         return null;
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void deletePublisher(@PathVariable Long id) {
         publisherRepository.deleteById(id);
     }

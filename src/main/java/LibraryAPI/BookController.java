@@ -28,7 +28,7 @@ public class BookController {
         return bookRepository.findById(id).orElse(null);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public Book updateBook(@PathVariable Long id, @RequestBody Book newBook) {
         Optional<Book>optionalBook = bookRepository.findById(id);
         if (optionalBook.isPresent()) {
@@ -47,7 +47,7 @@ public class BookController {
         return null;
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void deleteBook(@PathVariable Long id) {
         bookRepository.deleteById(id);
     }

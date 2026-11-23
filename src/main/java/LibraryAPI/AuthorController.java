@@ -28,7 +28,7 @@ public class AuthorController {
         return authorRepository.findById(id).orElse(null);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public Author updateAuthor(@PathVariable Long id, @RequestBody Author newAuthor) {
         Optional<Author> optionalAuthor = authorRepository.findById(id);
         if (optionalAuthor.isPresent()) {
@@ -42,7 +42,7 @@ public class AuthorController {
         return null;
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void deleteAuthor(@PathVariable Long id) {
         authorRepository.deleteById(id);
     }
