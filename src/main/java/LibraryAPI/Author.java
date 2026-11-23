@@ -23,6 +23,7 @@ public class Author {
     @Column(name = "nationality")
     private String nationality;
 
+    // Getters and Setters
     public Long getAuthorId() {
         return this.authorId;
     }

@@ -34,6 +34,7 @@ public class Book {
     @Column(name = "genre")
     private String genre;
 
+    // Getters and Setters
     public Long getBookId() {
         return this.bookId;
     }

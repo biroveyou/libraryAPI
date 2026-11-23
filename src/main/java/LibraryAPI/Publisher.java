@@ -22,6 +22,7 @@ public class Publisher {
     @Column(name = "foundation_year")
     private int foundationYear;
 
+    // Getters and Setters
     public Long getPublisherId() {
         return this.publisherId;
     }
